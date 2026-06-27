@@ -1,39 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>방</title>
-<style>
-body{text-align:center;font-family:Arial}
-.profile{display:inline-block;width:40%;}
-button{padding:10px 20px;margin:10px}
-.win{background:green;color:white}
-.lose{background:red;color:white}
-</style>
-</head>
 <body>
 <h2 id="room"></h2>
-<div>
-<div class="profile">
-<h3>1P</h3>
-<input id="p1name" placeholder="닉네임">
-<input type="file" id="p1img">
-</div>
-<div class="profile">
-<h3>2P</h3>
-<input id="p2name" placeholder="닉네임">
-<input type="file" id="p2img">
-</div>
-</div>
-
-<div>
-<button onclick="select('win')" class="win">승리</button>
-<button onclick="select('lose')" class="lose">패배</button>
-</div>
-
-<div>
+<button onclick="select('win')" style="background:green;color:white">승리</button>
+<button onclick="select('lose')" style="background:red;color:white">패배</button>
+<br><br>
 <button onclick="agree()">동의</button>
-</div>
 
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>

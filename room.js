@@ -1,14 +1,21 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyAIl6sNYPBSVnfyug6GXFF9SafgieqdXSE",
+  authDomain: "teamkeo-makggura.firebaseapp.com",
+  databaseURL: "https://teamkeo-makggura-default-rtdb.firebaseio.com/",
+  projectId: "teamkeo-makggura"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
 const params=new URLSearchParams(location.search);
 const room=params.get('room');
 const role=params.get('role');
 
-const firebaseConfig={apiKey:"YOUR_KEY",authDomain:"YOUR_DOMAIN",databaseURL:"YOUR_DB_URL",projectId:"YOUR_PROJECT_ID"};
-firebase.initializeApp(firebaseConfig);
-const db=firebase.database();
 document.getElementById('room').innerText="Room:"+room;
 
 function select(r){
- db.ref('rooms/'+room+'/win').set({role:role,result:r});
+ db.ref('rooms/'+room+'/result').set({role:role,result:r});
 }
 
 function agree(){

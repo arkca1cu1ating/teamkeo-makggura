@@ -1,12 +1,18 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyAIl6sNYPBSVnfyug6GXFF9SafgieqdXSE",
+  authDomain: "teamkeo-makggura.firebaseapp.com",
+  databaseURL: "https://teamkeo-makggura-default-rtdb.firebaseio.com/",
+  projectId: "teamkeo-makggura"
+};
+
 <!DOCTYPE html>
 <html>
 <body>
-<h2>로그</h2>
-<div id="log"></div>
+<h2 id="log"></h2>
+
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script>
-const firebaseConfig={apiKey:"YOUR_KEY",authDomain:"YOUR_DOMAIN",databaseURL:"YOUR_DB_URL",projectId:"YOUR_PROJECT_ID"};
 firebase.initializeApp(firebaseConfig);
 const db=firebase.database();
 
@@ -14,9 +20,9 @@ const params=new URLSearchParams(location.search);
 const room=params.get('room');
 
 if(room){
- db.ref('rooms/'+room).once('value').then(s=>{
+ db.ref('rooms/'+room+'/result').once('value').then(s=>{
   let d=s.val();
-  document.getElementById('log').innerText=room+" 결과:"+d.win.role+" "+d.win.result;
+  document.getElementById('log').innerText=room+" "+d.role+" "+d.result;
  });
 }
 </script>

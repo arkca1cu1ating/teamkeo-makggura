@@ -10,12 +10,7 @@ const db = firebase.database();
 
 function createRoom(){
  let code=Math.random().toString(36).substring(2,8);
- db.ref('rooms/'+code).set({
-  p1:{name:"",img:""},
-  p2:{name:"",img:""},
-  win:null,
-  ready:{p1:false,p2:false}
- });
+ db.ref('rooms/'+code).set({ready:{p1:false,p2:false}});
  location.href='room.html?room='+code+'&role=p1';
 }
 

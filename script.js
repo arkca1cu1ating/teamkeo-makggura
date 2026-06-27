@@ -1,8 +1,11 @@
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  databaseURL: "YOUR_DB_URL",
-  projectId: "YOUR_PROJECT_ID",
+  apiKey: "AIzaSyAIl6sNYPBSVnfyug6GXFF9SafgieqdXSE",
+  authDomain: "teamkeo-makggura.firebaseapp.com",
+  projectId: "teamkeo-makggura",
+  storageBucket: "teamkeo-makggura.firebasestorage.app",
+  messagingSenderId: "551695182532",
+  appId: "1:551695182532:web:da21a42d3cc733344c7791",
+  measurementId: "G-EXBW43DLT9"
 };
 
 const app = firebase.initializeApp(firebaseConfig);

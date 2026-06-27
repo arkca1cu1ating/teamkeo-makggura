@@ -1,12 +1,12 @@
 const firebaseConfig = {
   apiKey: "AIzaSyAIl6sNYPBSVnfyug6GXFF9SafgieqdXSE",
   authDomain: "teamkeo-makggura.firebaseapp.com",
+  databaseURL: "https://teamkeo-makggura-default-rtdb.firebaseio.com/",
   projectId: "teamkeo-makggura",
   storageBucket: "teamkeo-makggura.firebasestorage.app",
   messagingSenderId: "551695182532",
   appId: "1:551695182532:web:da21a42d3cc733344c7791",
   measurementId: "G-EXBW43DLT9"
-  databaseURL: "https://teamkeo-makggura-default-rtdb.firebaseio.com/"
 };
 
 const app = firebase.initializeApp(firebaseConfig);

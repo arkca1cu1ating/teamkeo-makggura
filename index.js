@@ -1,9 +1,10 @@
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  databaseURL: "YOUR_DB_URL",
-  projectId: "YOUR_PROJECT_ID"
+  apiKey: "AIzaSyAIl6sNYPBSVnfyug6GXFF9SafgieqdXSE",
+  authDomain: "teamkeo-makggura.firebaseapp.com",
+  databaseURL: "https://teamkeo-makggura-default-rtdb.firebaseio.com/",
+  projectId: "teamkeo-makggura"
 };
+
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 

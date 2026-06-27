@@ -1,84 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>방 만들기</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 60px 20px;
-      background: #f7f7f7;
-    }
-
-    .box {
-      width: min(420px, 92vw);
-      margin: 0 auto;
-      padding: 28px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 28px;
-    }
-
-    input {
-      width: 230px;
-      padding: 9px;
-      font-size: 16px;
-      text-align: center;
-    }
-
-    button {
-      font-size: 18px;
-      padding: 12px 22px;
-      margin: 8px;
-      cursor: pointer;
-      border: 1px solid #333;
-      border-radius: 8px;
-      background: #fff;
-    }
-
-    button.primary {
-      background: #222;
-      color: white;
-    }
-
-    .hint {
-      margin-top: 18px;
-      color: #666;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>방 생성</title>
+<style>
+body {font-family: Arial;text-align:center;margin-top:100px;}
+button {padding:10px 20px;margin:10px;font-size:16px;}
+</style>
 </head>
 <body>
-  <div class="box">
-    <h1>방 만들기</h1>
+<h1>방 생성</h1>
+<button onclick="createRoom()">새 방 생성</button>
+<br><br>
+<input id="code" placeholder="코드 입력">
+<button onclick="joinRoom()">입장</button>
+<br><br>
+<button onclick="location.href='log.html'">로그 보기</button>
 
-    <button class="primary" onclick="createRoom()">새 방 생성</button>
-
-    <hr style="margin: 24px 0;">
-
-    <h2>코드로 입장</h2>
-    <input id="roomInput" placeholder="Room Code 입력" />
-    <br />
-    <button onclick="joinRoom()">2P로 입장</button>
-
-    <div class="hint">
-      새 방을 생성한 사람은 자동으로 1P가 됩니다.<br>
-      코드를 입력하고 들어온 사람은 자동으로 2P가 됩니다.
-    </div>
-  </div>
-
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <script src="index.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="index.js"></script>
 </body>
 </html>

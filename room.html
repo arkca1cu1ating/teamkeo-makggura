@@ -1,92 +1,42 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>공유 방</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 50px 20px;
-      background: #f7f7f7;
-    }
-
-    .box {
-      width: min(520px, 94vw);
-      margin: 0 auto;
-      padding: 28px;
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 28px;
-    }
-
-    .info {
-      margin: 10px 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .buttons {
-      margin-top: 28px;
-    }
-
-    .toggle-btn {
-      width: 170px;
-      height: 82px;
-      font-size: 26px;
-      font-weight: bold;
-      margin: 10px;
-      border: 2px solid #333;
-      border-radius: 10px;
-      color: white;
-      cursor: pointer;
-    }
-
-    .desc {
-      margin-top: 22px;
-      color: #666;
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .back {
-      margin-top: 24px;
-      font-size: 16px;
-      padding: 9px 16px;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>방</title>
+<style>
+body{text-align:center;font-family:Arial}
+.profile{display:inline-block;width:40%;}
+button{padding:10px 20px;margin:10px}
+.win{background:green;color:white}
+.lose{background:red;color:white}
+</style>
 </head>
 <body>
-  <div class="box">
-    <h1>공유 방</h1>
-    <div id="roomText" class="info"></div>
-    <div id="roleText" class="info"></div>
+<h2 id="room"></h2>
+<div>
+<div class="profile">
+<h3>1P</h3>
+<input id="p1name" placeholder="닉네임">
+<input type="file" id="p1img">
+</div>
+<div class="profile">
+<h3>2P</h3>
+<input id="p2name" placeholder="닉네임">
+<input type="file" id="p2img">
+</div>
+</div>
 
-    <div class="buttons">
-      <button id="btnA" class="toggle-btn" onclick="toggleButton('A')">A OFF</button>
-      <button id="btnB" class="toggle-btn" onclick="toggleButton('B')">B OFF</button>
-    </div>
+<div>
+<button onclick="select('win')" class="win">승리</button>
+<button onclick="select('lose')" class="lose">패배</button>
+</div>
 
-    <div class="desc">
-      A/B 버튼은 1P와 2P 모두 누를 수 있습니다.<br>
-      단, 어떤 사람이 ON으로 바꾼 버튼은 그 사람만 OFF로 바꿀 수 있습니다.<br>
-      예: 1P가 A를 ON으로 바꾸면 2P는 A를 OFF로 바꿀 수 없습니다.
-    </div>
+<div>
+<button onclick="agree()">동의</button>
+</div>
 
-    <button class="back" onclick="location.href='index.html'">방 만들기 화면으로</button>
-  </div>
-
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <script src="room.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="room.js"></script>
 </body>
 </html>

@@ -2,17 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
 <title>방 생성</title>
 </head>
 <body>
+<div class="card">
 <h1>방 생성</h1>
-<button onclick="createRoom()">새 방 생성</button>
-<br><br>
+<button class="primary" onclick="createRoom()">새 방 생성</button><br>
 <input id="code" placeholder="코드 입력">
-<button onclick="joinRoom()">입장</button>
-<br><br>
+<button class="primary" onclick="joinRoom()">입장</button><br>
 <button onclick="location.href='log.html'">로그 보기</button>
-
+</div>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script src="index.js"></script>

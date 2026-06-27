@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
+<div class="card">
 <h2 id="room"></h2>
-<button onclick="select('win')" style="background:green;color:white">승리</button>
-<button onclick="select('lose')" style="background:red;color:white">패배</button>
-<br><br>
-<button onclick="agree()">동의</button>
-
+<button class="win" onclick="select('승리')">승리</button>
+<button class="lose" onclick="select('패배')">패배</button><br>
+<button class="primary" onclick="agree()">동의</button>
+</div>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script src="room.js"></script>

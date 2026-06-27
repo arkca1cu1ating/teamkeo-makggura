@@ -1,86 +1,84 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1P / 2P Sync Toggle Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>방 만들기</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 50px;
+      margin: 0;
+      padding: 60px 20px;
+      background: #f7f7f7;
+    }
+
+    .box {
+      width: min(420px, 92vw);
+      margin: 0 auto;
+      padding: 28px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
     }
 
     input {
-      width: 190px;
-      padding: 6px;
-      font-size: 15px;
+      width: 230px;
+      padding: 9px;
+      font-size: 16px;
       text-align: center;
     }
 
     button {
       font-size: 18px;
-      padding: 10px 18px;
-      margin: 5px;
+      padding: 12px 22px;
+      margin: 8px;
       cursor: pointer;
-    }
-
-    .role-button {
-      min-width: 110px;
-    }
-
-    #app {
-      display: none;
-      margin-top: 30px;
-    }
-
-    .toggle-wrap {
-      margin-top: 20px;
-    }
-
-    .toggle-btn {
-      width: 150px;
-      height: 70px;
-      font-size: 24px;
-      font-weight: bold;
-      border: 2px solid #333;
+      border: 1px solid #333;
       border-radius: 8px;
+      background: #fff;
+    }
+
+    button.primary {
+      background: #222;
       color: white;
     }
 
-    .toggle-btn:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
-    }
-
-    #myRoleText {
-      margin-top: 15px;
-      font-weight: bold;
+    .hint {
+      margin-top: 18px;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
-  <h2>Room Key 입력</h2>
-  <input id="room" placeholder="room key">
-  <br>
-  <button onclick="createRoom()">방 생성</button>
-  <br>
-  <button class="role-button" onclick="joinRoom('p1')">1P로 입장</button>
-  <button class="role-button" onclick="joinRoom('p2')">2P로 입장</button>
+  <div class="box">
+    <h1>방 만들기</h1>
 
-  <div id="app">
-    <h2 id="roomDisplay"></h2>
-    <div id="myRoleText"></div>
+    <button class="primary" onclick="createRoom()">새 방 생성</button>
 
-    <div class="toggle-wrap">
-      <button id="p1Btn" class="toggle-btn">1P OFF</button>
-      <button id="p2Btn" class="toggle-btn">2P OFF</button>
+    <hr style="margin: 24px 0;">
+
+    <h2>코드로 입장</h2>
+    <input id="roomInput" placeholder="Room Code 입력" />
+    <br />
+    <button onclick="joinRoom()">2P로 입장</button>
+
+    <div class="hint">
+      새 방을 생성한 사람은 자동으로 1P가 됩니다.<br>
+      코드를 입력하고 들어온 사람은 자동으로 2P가 됩니다.
     </div>
   </div>
 
-  <!-- Firebase v8 SDK: 현재 script.js 방식(firebase.initializeApp, firebase.database)에 맞는 버전 -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <script src="script.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
